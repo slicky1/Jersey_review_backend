@@ -1,19 +1,19 @@
 class TeamsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
 
-    def index
-        teams = Team.all
-        # render json: teams, only: [:name, :img_source]
-        render json: teams
-      end
+    # def index
+    #     teams = Team.all
+    #     # render json: teams, only: [:name, :img_source]
+    #     render json: teams
+    #   end
 
 
-        # def index
-        #     country = Country.find(params[:country_id])
-        #     teams = country.teams
-        #     # render json: teams, only: [:name, :img_source]
-        #     render json: teams
-        #   end
+        def index
+            country = Country.find(params[:country_id])
+            teams = country.teams
+            # render json: teams, only: [:name, :img_source]
+            render json: teams
+          end
 
 
 
