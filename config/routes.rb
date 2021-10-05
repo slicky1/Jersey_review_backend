@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :jerseys
   resources :brands
   resources :teams
   resources :countries

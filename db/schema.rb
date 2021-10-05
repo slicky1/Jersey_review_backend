@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_05_132028) do
+ActiveRecord::Schema.define(version: 2021_10_05_134504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,18 @@ ActiveRecord::Schema.define(version: 2021_10_05_132028) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "jerseys", force: :cascade do |t|
+    t.string "name"
+    t.string "img_source"
+    t.string "description"
+    t.bigint "team_id", null: false
+    t.bigint "brand_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["brand_id"], name: "index_jerseys_on_brand_id"
+    t.index ["team_id"], name: "index_jerseys_on_team_id"
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.string "img_source"
@@ -37,5 +49,7 @@ ActiveRecord::Schema.define(version: 2021_10_05_132028) do
     t.index ["country_id"], name: "index_teams_on_country_id"
   end
 
+  add_foreign_key "jerseys", "brands"
+  add_foreign_key "jerseys", "teams"
   add_foreign_key "teams", "countries"
 end
