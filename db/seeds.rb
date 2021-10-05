@@ -32,3 +32,10 @@ Team.create!(name: 'Inter Milan', img_source: 'https://upload.wikimedia.org/wiki
 Team.create!(name: 'AC Milan', img_source: 'https://logos-world.net/wp-content/uploads/2020/11/Milan-Logo-1997-1998.png', country_id: 5)
 
 puts "Team Seeded"
+
+Brand.create!(name: 'Adidas')
+Brand.create!(name: 'Nike')
+Brand.create!(name: 'Puma')
+Brand.create!(name: 'New Balance')
+
+puts "Brand Seeded"
