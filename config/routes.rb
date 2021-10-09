@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :reviews
   resources :users
-  resources :jerseys
-  resources :brands
+   resources :jerseys
+  resources :brands do
+    resources :jerseys
+  end
   # resources :teams
   # resources :countries
   resources :countries do

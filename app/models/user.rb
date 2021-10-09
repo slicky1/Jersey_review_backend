@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :reviews
+    has_many :reviews, dependent: :destroy
 
     validates :user_name, presence: true, uniqueness: true
     validates :email, presence: true, uniqueness: true

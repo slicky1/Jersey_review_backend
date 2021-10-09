@@ -6,6 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Jersey.destroy_all
+Brand.destroy_all
+Team.destroy_all
+Country.destroy_all
+
+
+
+
 Country.create!(name: 'England', img_source: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/1200px-Flag_of_England.svg.png')
 Country.create!(name: 'Spain', img_source: 'https://a.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fsoccer%2F500%2F164.png')
 Country.create!(name: 'Germany', img_source: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png')
@@ -14,6 +22,7 @@ Country.create!(name: 'Italy', img_source: 'https://upload.wikimedia.org/wikiped
 
 
 puts "Country seeded"
+
 
 Team.create!(name: 'Manchester United', img_source: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/800px-Manchester_United_FC_crest.svg.png', country_id: 1)
 Team.create!(name: 'Chelsea', img_source: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/1200px-Chelsea_FC.svg.png', country_id: 1)
@@ -33,12 +42,17 @@ Team.create!(name: 'AC Milan', img_source: 'https://logos-world.net/wp-content/u
 
 puts "Team Seeded"
 
+
+
+
 Brand.create!(name: 'Adidas')
 Brand.create!(name: 'Nike')
 Brand.create!(name: 'Puma')
 Brand.create!(name: 'New Balance')
 
 puts "Brand Seeded"
+
+
 
 Jersey.create!(name: 'MANCHESTER UNITED 21/22 HOME JERSEY BY ADIDAS', img_source: 'https://www.imagehandler.net/preview/?istyle=0000&fmt=jpg&w=2000&h=2000&cmp=100&c=999&img=A1052995000&iset=0108&iindex=0007', description: 'This is the United state of mind. The heart of Manchester is beating red, and the people there remember – they lived through – the greats who wore that red. George Best, Bobby Charlton and the like. This kit hearkens back to that era, that grit, that resilience, the values that built the city. This classy home jersey will connect you to that attitude, to the city of Manchester and the people that built it.', team_id: 1, brand_id:1)
 Jersey.create!(name: 'MANCHESTER UNITED 21/22 AWAY JERSEY BY ADIDAS', img_source: 'https://www.imagehandler.net/preview/?istyle=0000&fmt=jpg&w=2000&h=2000&cmp=100&c=999&img=A1054695000&iset=0108&iindex=0007', description: 'For 21/22 away days, adidas and Manchester United take an early-90s classic and reimagine it with a little help from Eric Cantona. Famously sighting the city of Manchester as having an “insane love of football, of celebration and of music,” Cantona ignites a jersey style inspired by records, with repeating lines across the kit in the same style as the ridges a record player runs across. Elsewhere, the jersey hearkens back to Cantona’s era, remembering the famous snowflake kit in color and execution.', team_id: 1, brand_id:1)
@@ -107,3 +121,5 @@ Jersey.create!(name: 'AC MILAN 21/22 AWAY JERSEY BY PUMA', img_source: 'https://
 Jersey.create!(name: 'AC MILAN 21/22 THIRD JERSEY BY PUMA', img_source: 'https://www.imagehandler.net/preview/?istyle=0000&fmt=jpg&w=2000&h=2000&cmp=100&c=999&img=A1056080000&iset=0108&iindex=0007', description: 'PUMA drop a set of ground-breakers for their elite club third jerseys in 21/22. The soccer world might love them, or they may not be well received, but what we can assure you is that PUMA is blazing new trails, creating standout kits that will get the conversation going. Here, AC Milan edition, you’re seeing a dark palette with sublimated Milan crests repeating across the front and, foregoing the crest over the heart as is the norm, a replacement club name in strong, bold lettering across the chest. This is new territory for jersey lovers everywhere.', team_id: 15, brand_id:3)
 
 puts "Jersey Seeded"
+
+
