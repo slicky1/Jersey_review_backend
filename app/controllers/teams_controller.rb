@@ -13,6 +13,7 @@ class TeamsController < ApplicationController
             teams = country.teams
             # render json: teams, only: [:name, :img_source]
             render json: teams
+
           end
 
 
@@ -23,10 +24,14 @@ class TeamsController < ApplicationController
     
     end
     def show
-        team = find_team
-        # render json: team, only: [:name, :img_url]
-        render json: team
-    
+        # team = find_team
+        # # render json: team, only: [:name, :img_url]
+        # render json: team
+        country = Country.find(params[:id])
+            teams = country.teams
+            # render json: teams, only: [:name, :img_source]
+            render json: teams
+        
     end
 
     def update
