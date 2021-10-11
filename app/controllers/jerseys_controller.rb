@@ -1,9 +1,23 @@
 class JerseysController < ApplicationController
+    # def index
+    #     jerseys = Jersey.all
+    #     # render json: jerseys, only: [:name, :img_source]
+    #     render json: jerseys
+    #   end
+
     def index
-        jerseys = Jersey.all
-        # render json: jerseys, only: [:name, :img_source]
-        render json: jerseys
+        team = Team.find(params[:team_id])
+        jerseys = team.jerseys
+        render json: team, only: [:name, :img_source]
+        # render json: jerseys
       end
+
+    #   def index
+    #     country = Country.find(params[:country_id])
+    #     teams = country.teams
+    #     # render json: teams, only: [:name, :img_source]
+    #     render json: teams
+    #   end
 
 
       def create
