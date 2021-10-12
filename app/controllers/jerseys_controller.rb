@@ -8,8 +8,8 @@ class JerseysController < ApplicationController
     def index
         team = Team.find(params[:team_id])
         jerseys = team.jerseys
-        render json: team, only: [:name, :img_source]
-        # render json: jerseys
+        # render json: team, only: [:name, :img_source]
+        render json: jerseys
       end
 
     #   def index
