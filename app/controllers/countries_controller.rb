@@ -20,9 +20,9 @@ class CountriesController < ApplicationController
         
         end
         def show
-            country = find_country
+            country = find_country 
             # render json: country, only: [:name, :img_url]
-            render json: country
+            render json: country, include: :teams
         
         end
     
