@@ -30,7 +30,7 @@ class TeamsController < ApplicationController
         country = Country.find(params[:id])
             teams = country.teams
             # render json: teams, only: [:name, :img_source]
-            render json: teams
+            render json: teams, include: :jerseys
         
     end
 
