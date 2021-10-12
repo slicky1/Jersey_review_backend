@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     end
 
     def destroy
+        session.delete :user_id
         render json: {"message": "Trying to logout"}
     end
 
