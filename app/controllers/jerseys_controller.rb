@@ -26,9 +26,14 @@ class JerseysController < ApplicationController
     
     end
     def show
-        jersey = find_jersey
-        # render json: jersey, only: [:name, :img_url]
-        render json: jersey
+        # jersey = find_jersey
+        # # render json: jersey, only: [:name, :img_url]
+        # render json: jersey
+
+        team = Team.find(params[:id])
+        jerseys = team.jerseys
+        render json: team, only: [:name, :img_source]
+        # render json: jerseys
     
     end
 
