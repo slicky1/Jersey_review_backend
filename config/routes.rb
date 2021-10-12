@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :reviews
   resources :users
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+  
   resources :jerseys
    resources :brands 
     resources :jerseys

@@ -4,14 +4,21 @@ class UsersController < ApplicationController
     
     
         def index
-            users = User.all
+            # users = User.all
             
-            render json: users
+            # render json: users
+
+            session[:id] = "id"
+            cookies[:test] = "test"
+            render json: { session: session, cookies: cookies }
         end
     
         def show
-            user = User.find(params[:id])
-            render json: user 
+            # user = User.find(params[:id])
+            # render json: user 
+
+            byebug
+            render json: { message: "show"}
         end
     
         def create
