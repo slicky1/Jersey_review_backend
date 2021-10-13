@@ -4,15 +4,17 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   
-  resources :jerseys
-   resources :brands 
-    resources :jerseys
-   resources :teams
+  # resources :jerseys
+  #  resources :brands 
+  #   resources :jerseys
+  
   # resources :countries
   resources :countries do
-    resources :teams do 
-      resources :jerseys
-    end
+    resources :teams 
+  end
+
+  resources :teams do
+    resources :jerseys
   end
 
   resources :brands do
