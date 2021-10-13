@@ -1,9 +1,22 @@
 class ReviewsController < ApplicationController
-    def index
-        reviews = Review.all
-        # render json: reviews, only: [:name, :img_source]
-        render json: reviews
+    # def index
+    #     reviews = Review.all
+    #     # render json: reviews, only: [:name, :img_source]
+    #     render json: reviews
+
+        
+    #   end
+
+      def index
+        jersey = Jersey.find(params[:jersey_id])
+        reviews = jersey.reviews
+        render json: reviews, only: [:title, :description, :rating]
+        # render json: reviews
       end
+    
+    
+
+
 
 
       def create
@@ -12,9 +25,15 @@ class ReviewsController < ApplicationController
     
     end
     def show
-        review = find_review
-        # render json: review, only: [:name, :img_url]
-        render json: review
+        # review = find_review
+        # # render json: review, only: [:name, :img_url]
+        # render json: review
+
+        jersey = Jersey.find(params[:id])
+        reviews = jersey.reviews
+        render json: reviews, only: [:title, :description, :rating]
+        # render json: reviews
+    
     
     end
 

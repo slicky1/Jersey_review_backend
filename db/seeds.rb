@@ -10,6 +10,7 @@ Jersey.destroy_all
 Brand.destroy_all
 Team.destroy_all
 Country.destroy_all
+User.destroy_all
 
 
 
@@ -114,5 +115,8 @@ Jersey.create!(name: 'AC MILAN 21/22 AWAY JERSEY BY PUMA', img_source: 'https://
 Jersey.create!(name: 'AC MILAN 21/22 THIRD JERSEY BY PUMA', img_source: 'https://www.imagehandler.net/preview/?istyle=0000&fmt=jpg&w=2000&h=2000&cmp=100&c=999&img=A1056080000&iset=0108&iindex=0007', description: 'PUMA drop a set of ground-breakers for their elite club third jerseys in 21/22. The soccer world might love them, or they may not be well received, but what we can assure you is that PUMA is blazing new trails, creating standout kits that will get the conversation going. Here, AC Milan edition, you’re seeing a dark palette with sublimated Milan crests repeating across the front and, foregoing the crest over the heart as is the norm, a replacement club name in strong, bold lettering across the chest. This is new territory for jersey lovers everywhere.', team_id: 15, brand_id:3)
 
 puts "Jersey Seeded"
+
+User.create!(user_name: 'Mike', email: 'okunonke@gmail.com', password_digest: 'jsjhdhgg')
+User.create!(user_name: 'Louis', email: 'Louis@gmail.com', password_digest: 'jsjhdhgg')
 
 

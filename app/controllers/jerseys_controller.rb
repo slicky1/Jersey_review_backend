@@ -30,10 +30,10 @@ class JerseysController < ApplicationController
         # # render json: jersey, only: [:name, :img_url]
         # render json: jersey
 
-        team = Team.find(params[:id])
-        jerseys = team.jerseys
+        jersey = Jersey.find(params[:id])
+        # jerseys = team.jerseys
         # render json: team, only: [:name, :img_source]
-        render json: jerseys
+        render json: jersey, include: :reviews
     
     end
 

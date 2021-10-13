@@ -17,8 +17,8 @@ class UsersController < ApplicationController
             # user = User.find(params[:id])
             # render json: user 
 
-            byebug
-            render json: { message: "show"}
+            # byebug
+            render json: { message: show}
         end
     
         def create
