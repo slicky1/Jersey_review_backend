@@ -11,6 +11,7 @@ Brand.destroy_all
 Team.destroy_all
 Country.destroy_all
 User.destroy_all
+Review.destroy_all
 
 
 

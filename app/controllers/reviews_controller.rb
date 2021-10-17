@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
         # # render json: review, only: [:name, :img_url]
         # render json: review
 
-        jersey = Jersey.find(params[:id])
+    reviews = Review.find(params[:id])
         reviews = jersey.reviews
         render json: reviews, only: [:title, :description, :rating]
         # render json: reviews
