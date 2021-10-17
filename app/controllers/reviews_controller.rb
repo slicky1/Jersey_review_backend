@@ -8,10 +8,13 @@ class ReviewsController < ApplicationController
     #   end
 
       def index
-        jersey = Jersey.find(params[:jersey_id])
-        reviews = jersey.reviews
-        render json: reviews, only: [:title, :description, :rating]
+        # jersey = Jersey.find(params[:jersey_id])
+        # reviews = jersey.reviews
+        # render json: reviews, only: [:title, :description, :rating]
         # render json: reviews
+
+        reviews = Review.all
+        render json: reviews
       end
     
     
@@ -31,7 +34,7 @@ class ReviewsController < ApplicationController
         # render json: review
 
     reviews = Review.find(params[:id])
-        reviews = jersey.reviews
+        # reviews = jersey.reviews
         render json: reviews, only: [:title, :description, :rating]
         # render json: reviews
     
