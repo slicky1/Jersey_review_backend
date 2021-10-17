@@ -20,6 +20,7 @@ class ReviewsController < ApplicationController
 
 
       def create
+        # byebug
         reviews = Review.create(review_params)
         render json: reviews, status: :created
     
@@ -54,7 +55,7 @@ class ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:review).permit(:name, :img_url)
+        params.require(:review).permit( :user_id, :jersey_id, :title, :description, :rating)
     end
 
     def find_review
